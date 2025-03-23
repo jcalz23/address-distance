@@ -52,7 +52,7 @@ def main():
     # Configuration
     INPUT_FILE = "addresses.csv"
     OUTPUT_FILE = "addresses_with_distances.csv"
-    API_KEY = "YOUR_GOOGLE_API_KEY"
+    API_KEY = "AIzaSyCg9oTAEhmWHoGqRN0jbcHCeeoR0Q-gB7E"
     
     # Process CSV file
     result_df = process_csv(INPUT_FILE, OUTPUT_FILE, API_KEY)
