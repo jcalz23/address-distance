@@ -1,12 +1,8 @@
+import os
 import pandas as pd
 import googlemaps
 import time
-
-
-def init_google_maps_client(api_key):
-    """Initialize and return Google Maps client with the provided API key."""
-    return googlemaps.Client(key=api_key)
-
+from dotenv import load_dotenv
 
 def calculate_distance(gmaps_client, address1, address2):
     """Calculate driving distance between two addresses in miles."""
@@ -25,7 +21,7 @@ def calculate_distance(gmaps_client, address1, address2):
 def process_csv(input_file, output_file, api_key, delay=0.2):
     """Process CSV file and add distance column."""
     # Initialize client
-    gmaps = init_google_maps_client(api_key)
+    gmaps = googlemaps.Client(key=api_key)
     
     # Read CSV file
     df = pd.read_csv(input_file)
@@ -52,7 +48,8 @@ def main():
     # Configuration
     INPUT_FILE = "addresses.csv"
     OUTPUT_FILE = "addresses_with_distances.csv"
-    API_KEY = "YOUR_GOOGLE_API_KEY"
+    load_dotenv()
+    API_KEY = os.getenv("API_KEY")
     
     # Process CSV file
     result_df = process_csv(INPUT_FILE, OUTPUT_FILE, API_KEY)
