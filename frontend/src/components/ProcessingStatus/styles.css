@@ -1,0 +1,39 @@
+.processing-status {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.processing-status.uploading,
+.processing-status.processing {
+  background-color: #dbeafe;
+  border: 1px solid #bfdbfe;
+}
+
+.processing-status.success {
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+}
+
+.processing-status.error {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #bfdbfe;
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 

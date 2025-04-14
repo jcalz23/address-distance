@@ -1,0 +1,12 @@
+.error-display {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+.error-display p {
+  color: var(--error-color);
+  margin: 0.25rem 0;
+} 
